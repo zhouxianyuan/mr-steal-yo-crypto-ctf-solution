@@ -6,7 +6,7 @@ Created by [@0xToshii](https://twitter.com/0xToshii)
 
 Solution - Foundry Version by [@gbaleeee](https://twitter.com/gbaleeeee)
 
-Inspired by [mr-steal-yo-crypto-ctf-foundry](https://github.com/vyorkin/mr-steal-yo-crypto-ctf-foundry) [damn-vulnerable-defi-solution](https://github.com/Poor4ever/damn-vulnerable-defi-solution)
+Inspired by [mr-steal-yo-crypto-ctf-foundry](https://github.com/vyorkin/mr-steal-yo-crypto-ctf-foundry) and [damn-vulnerable-defi-solution](https://github.com/Poor4ever/damn-vulnerable-defi-solution)
 
 ## Play With Website
 
