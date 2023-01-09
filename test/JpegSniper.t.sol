@@ -66,8 +66,9 @@ contract EXP {
 
 contract NFTMinter {
     constructor(FlatLaunchpeg Launchpeg, address receiver, uint256 NFTIndex) {
-        Launchpeg.publicSaleMint(Launchpeg.maxPerAddressDuringMint());
+        uint256 maxPerAddressDuringMint = Launchpeg.maxPerAddressDuringMint();
         uint256 length = Launchpeg.maxPerAddressDuringMint();
+        Launchpeg.publicSaleMint(maxPerAddressDuringMint);
         for(uint256 i; i < length; ++i){
             Launchpeg.safeTransferFrom(address(this), receiver,  NFTIndex + i);
         }
