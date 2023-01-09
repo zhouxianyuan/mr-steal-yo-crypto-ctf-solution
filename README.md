@@ -6,6 +6,8 @@ Created by [@0xToshii](https://twitter.com/0xToshii)
 
 Solution - Foundry Version by [@gbaleeee](https://twitter.com/gbaleeeee)
 
+Inspired by [mr-steal-yo-crypto-ctf-foundry](https://github.com/vyorkin/mr-steal-yo-crypto-ctf-foundry)
+
 ## Play With Website
 
 Visit [mrstealyocrypto.xyz](https://mrstealyocrypto.xyz)
