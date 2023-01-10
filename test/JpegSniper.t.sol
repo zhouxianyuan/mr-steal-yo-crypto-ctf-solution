@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-import {FlatLaunchpeg} from "../src/jpeg-sniper/FlatLaunchpeg.sol";
+
 import {Test} from "forge-std/Test.sol";
 import {console} from "forge-std/console.sol";
+import {FlatLaunchpeg} from "../src/jpeg-sniper/FlatLaunchpeg.sol";
 
 contract JpegSniper is Test {
     FlatLaunchpeg public flatLaunchpeg;
