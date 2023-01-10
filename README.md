@@ -17,7 +17,7 @@ Visit [mrstealyocrypto.xyz](https://mrstealyocrypto.xyz)
 1.  **Install Foundry**
 2.  **Clone this repo and install dependencies**
 3.  **The questions of challenges under `src/` path, and the solution to question under `test` path**
-4.  **Run ```forge test --contracts ./test/xxx.t.sol -vvv``` to pass challenge**
+4.  **Run ```forge test --match-path test/xxx.t.sol -vvv``` to pass challenge**
 
 
 
