@@ -8,7 +8,8 @@ import {SafuStrategy} from "../src/safu-vault/SafuStrategy.sol";
 import {IStrategy} from "../src/safu-vault/SafuVault.sol";
 import {SafuVault} from "../src/safu-vault/SafuVault.sol";
 
-// Grim Finance incident
+// @source of inspiration
+// Grim Finance exploited
 
 contract safuVault is Test {
     SafuVault public safuVault;

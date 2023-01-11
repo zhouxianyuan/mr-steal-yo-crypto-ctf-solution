@@ -5,6 +5,8 @@ import {Test} from "forge-std/Test.sol";
 import {console} from "forge-std/console.sol";
 import {FlatLaunchpeg} from "../src/jpeg-sniper/FlatLaunchpeg.sol";
 
+// warm up
+
 contract JpegSniper is Test {
     FlatLaunchpeg public flatLaunchpeg;
     EXP public exp;

@@ -10,6 +10,10 @@ import {UniswapV2Pair} from "lib/v2-core/contracts/UniswapV2Pair.sol";
 import {UniswapV2Router02} from "lib/v2-periphery/contracts/UniswapV2Router02.sol";
 import {SafuMakerV2} from "../src/free-lunch/SafuMakerV2.sol";
 
+// @source of inspiration
+// https://rekt.news/badgers-digg-sushi/
+// https://rekt.news/sushiswap-saved-0xmaki-speaks-out/
+
 contract freeLunch is Test {
     SafuMakerV2 public safuMakerV2;
     UniswapV2Factory public Factory;
@@ -18,6 +22,8 @@ contract freeLunch is Test {
     WETH9 public WETH;
     Token public USDC;
     Token public SAFU;
+    uint256 EXPLOITER_BALANCE = 100 * 1e18;
+    uint256 USER_BALANCE = 1_000_000 * 1e18;
     address exploiter;
     address user;
 
@@ -34,8 +40,8 @@ contract freeLunch is Test {
         users[0] = exploiter;
         users[1] = user;
         uint256[] memory amounts = new uint256[](2);
-        amounts[0] = 100;
-        amounts[1] = 1_000_000;
+        amounts[0] = EXPLOITER_BALANCE;
+        amounts[1] = USER_BALANCE;
         SAFU.mintPerUser(users, amounts);
         USDC.mintPerUser(users, amounts);
         // deploy Factory, Router, Maker
@@ -43,7 +49,22 @@ contract freeLunch is Test {
         Router = new UniswapV2Router02(address(Factory), address(WETH));
         safuMakerV2 = new SafuMakerV2(address(Factory), address(1), address(SAFU), address(USDC));
 
+        SAFU.approve(address(Router), USER_BALANCE);
+        USDC.approve(address(Router), USER_BALANCE);
+        Router.addLiquidity(address(SAFU), address(USDC), USER_BALANCE, USER_BALANCE, 0, 0, address(this), block.timestamp + 60);
+        address(Pair) = Factory.getPair(address(SAFU), address(USDC));
+        Pair.transfer(address(safuMakerV2), 10_000 * 1e18);
+
     }
 
+    function testExploit() public {
+        vm.startPrank(exploiter, exploiter);
+
+        vm.stopPrank();
+    }
+
+    function verify() internal {
+
+    }
 
 }

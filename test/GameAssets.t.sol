@@ -6,6 +6,9 @@ import {console} from "forge-std/console.sol";
 import {GameAsset} from "../src/game-assets/GameAsset.sol";
 import {AssetWrapper} from "../src/game-assets/AssetWrapper.sol";
 
+// @source of inspiration
+// https://www.paradigm.xyz/2021/08/the-dangers-of-surprising-code
+
 contract gameAsset is Test {
     AssetWrapper public assetWrapper;
     GameAsset public swordAsset;
